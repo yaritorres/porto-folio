@@ -1,0 +1,47 @@
+.title {
+  font-family: 'Jura', sans-serif;
+  font-size: 150px;
+  margin: 0px;
+  padding: 20px 0px 0px 50px;
+}
+
+.subTitle {
+  font-family: 'Jura', sans-serif;
+  font-size: 100px;
+  margin: 0px;
+  padding: 0px 0px 20px 50px;
+}
+
+.tertiaryTitle {
+  font-family: 'Jura', sans-serif;
+  font-size: 50px;
+  margin: 0px;
+  padding: 0px 0px 20px 50px;
+  animation: fadeIn 7s;
+  animation-play-state: paused;
+}
+
+#mainPage {
+  position: absolute;
+  top: 0;
+  animation: slideUp 3s;
+  animation-play-state: paused;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100vh);
+  }
+  100% {
+    transform: translateY(0vh);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
