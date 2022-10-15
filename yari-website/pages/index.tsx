@@ -3,8 +3,8 @@ import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import Welcome from './Welcome';
 import MainPage from './Main';
-// import Crumbs from '../components/Crumbs';
 
+// eslint-disable-next-line react/function-component-definition
 const Home: NextPage = () => {
   const [hidden, setHidden] = useState(true);
   const [playState, setPlayState] = useState('paused');

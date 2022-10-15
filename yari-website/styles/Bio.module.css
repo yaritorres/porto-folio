@@ -1,0 +1,43 @@
+#bioContainer {
+  padding: 20px 20px 20px 50px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+#bio {
+  display: inline-block;
+  position: relative;
+  font-family: 'Jura', sans-serif;
+  font-size: 40px;
+  padding: 20px 20px 20px 20px;
+  width: 24vw;
+  margin-left: 60px;
+  /* visibility: hidden; */
+  animation: slideLeft 3s;
+}
+
+#yari {
+  border-radius: 10px;
+  display: inline-block;
+  animation: fadeIn 6s;
+  object-fit: cover;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
