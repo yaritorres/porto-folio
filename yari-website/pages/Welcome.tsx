@@ -2,16 +2,16 @@ import { useState, useEffect } from 'react';
 import styles from '../styles/Welcome.module.css';
 
 function Welcome(props) {
-  const [display, setDisplay] = useState('block');
+  const [tileDisplay, setTileDisplay] = useState('block');
   const [welcomeDisp, setWelcomeDisp] = useState('');
 
   useEffect(() => {
-    setTimeout(() => { setDisplay('none'); }, 3500);
+    setTimeout(() => { setTileDisplay('none'); }, 3500);
   }, []);
 
   const style = {
     display: welcomeDisp,
-    animationPlayState: props.hidden ? 'paused' : 'running',
+    animationPlayState: props.showWelcome ? 'paused' : 'running',
   };
 
   return (
@@ -24,8 +24,9 @@ function Welcome(props) {
           type="button"
           id={styles.startButton}
           onClick={() => {
-            props.setHidden(false);
-            setTimeout(() => { setWelcomeDisp('none'); props.setPlayState('running'); }, 3000);
+            props.setShowWelcome(false);
+            props.setShowMain(true);
+            setTimeout(() => { setWelcomeDisp('none'); }, 3000);
           }}
         >
           Start
@@ -33,10 +34,10 @@ function Welcome(props) {
         <div id={styles.circle} />
       </div>
       <div id={styles.tileContainer}>
-        <div className={styles.tile1} style={{ display }} />
-        <div className={styles.tile2} style={{ display }} />
-        <div className={styles.tile3} style={{ display }} />
-        <div className={styles.tile4} style={{ display }} />
+        <div className={styles.tile1} style={{ display: tileDisplay }} />
+        <div className={styles.tile2} style={{ display: tileDisplay }} />
+        <div className={styles.tile3} style={{ display: tileDisplay }} />
+        <div className={styles.tile4} style={{ display: tileDisplay }} />
       </div>
     </div>
   );
