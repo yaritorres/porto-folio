@@ -21,7 +21,7 @@ const Home: NextPage = () => {
         showWelcome={showWelcome}
         setShowMain={setShowMain}
       />
-      <MainPage showMain={showMain} setShowMain={setShowMain} />
+      <MainPage showMain={showMain} setShowMain={setShowMain} setShowCase={setShowCase} />
       <Showcase showCase={showCase} />
     </div>
   );

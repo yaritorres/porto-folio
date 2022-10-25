@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from '../styles/Bio.module.css';
 
-export default function Bio(props) {
+export default function Bio({ setShowMain, setShowCase }) {
   return (
     <div id={styles.bioContainer}>
       <img alt="Starry Night by Van Gogh" id={styles.starryNight} src="/img/starry-night.JPG" width="800" height="500" />
@@ -15,9 +15,7 @@ export default function Bio(props) {
         <button
           type="button"
           id={styles.startButton}
-          onClick={() => {
-            setTimeout(() => { props.setShowMain(false); }, 3000);
-          }}
+          onClick={() => { setShowMain(false); setShowCase(true); }}
         >
           ➤
           <div id={styles.circle} />

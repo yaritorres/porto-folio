@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from '../styles/Welcome.module.css';
 
-function Welcome(props) {
+function Welcome({ setShowWelcome, setShowMain, showWelcome }) {
   const [tileDisplay, setTileDisplay] = useState('block');
   const [welcomeDisp, setWelcomeDisp] = useState('');
 
@@ -11,7 +11,7 @@ function Welcome(props) {
 
   const style = {
     display: welcomeDisp,
-    animationPlayState: props.showWelcome ? 'paused' : 'running',
+    animationPlayState: showWelcome ? 'paused' : 'running',
   };
 
   return (
@@ -24,8 +24,8 @@ function Welcome(props) {
           type="button"
           id={styles.startButton}
           onClick={() => {
-            props.setShowWelcome(false);
-            props.setShowMain(true);
+            setShowWelcome(false);
+            setShowMain(true);
             setTimeout(() => { setWelcomeDisp('none'); }, 3000);
           }}
         >
